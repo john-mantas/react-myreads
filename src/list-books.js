@@ -15,9 +15,9 @@ class ListBooks extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Bookshelf title="Currently Reading" shelf={this.placeTo('currentlyReading')} />
-            <Bookshelf title="Want to Read" shelf={this.placeTo('wantToRead')} />
-            <Bookshelf title="Read" shelf={this.placeTo('read')} />
+            <Bookshelf title="Currently Reading" updateBooks={this.props.updateBooks} shelf={this.placeTo('currentlyReading')} />
+            <Bookshelf title="Want to Read" updateBooks={this.props.updateBooks} shelf={this.placeTo('wantToRead')} />
+            <Bookshelf title="Read" updateBooks={this.props.updateBooks} shelf={this.placeTo('read')} />
           </div>
         </div>
         <div className="open-search">

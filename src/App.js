@@ -9,16 +9,19 @@ class BooksApp extends React.Component {
   state = {
     books: []
   }
-  componentDidMount() {
+  updateBooks = () => (
     BooksAPI.getAll().then(books => {
       this.setState({ books })
-    })
+    })    
+  )
+  componentDidMount() {
+    this.updateBooks()
   }
   render() {
     return (
       <div className="app">
-        <Route path="/search" component={SearchPage} />
-        <Route exact path="/" render={() => (<ListBooks state={this.state} />)} />
+        <Route path="/search" render={() => (<SearchPage updateBooks={this.updateBooks} parentState={this.state} />)} />
+        <Route exact path="/" render={() => (<ListBooks updateBooks={this.updateBooks} state={this.state} />)} />
       </div>
     )
   }

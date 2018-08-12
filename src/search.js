@@ -13,8 +13,6 @@ class SearchPage extends React.Component {
     BooksAPI.search(query).then((response) => {
       if (response) {
         this.setState({ searchResults: response })
-        console.log(`search query: ${this.state.query}`)
-        console.log(`search response: ${this.state.searchResults}`)
       } else {
         this.setState({ searchResults: [] })
       }
@@ -38,8 +36,8 @@ class SearchPage extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {(this.state.searchResults.length > 0) && (
-                this.state.searchResults.map(books => (<li key={books.id}><Book book={books} /></li>))
-              )}
+              this.state.searchResults.map(books => (<li key={books.id}><Book updateBooks={this.props.updateBooks} parentState={this.props.parentState} book={books} /></li>))
+            )}
           </ol>
         </div>
       </div>
