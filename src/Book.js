@@ -45,7 +45,13 @@ class Book extends React.Component {
           </div>
         </div>
         <div className="book-title">{title}</div>
-        <div className="book-authors">{authors}</div>
+
+        <div className="book-details">
+          {(this.state.shelf && this.state.shelf !== "none") && (
+            <div className="book-shelf">You {this.state.shelf} it!</div>
+          )}
+          <div className="book-authors">by <span>{authors}</span></div>
+        </div>
       </div>
     );
   }
