@@ -4,6 +4,7 @@ import './App.css'
 import { Route } from 'react-router-dom'
 import SearchPage from './search';
 import ListBooks from './list-books'
+import Footer from './footer'
 
 class BooksApp extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route path="/search" render={() => (<SearchPage updateBooks={this.updateBooks} parentState={this.state} />)} />
         <Route exact path="/" render={() => (<ListBooks updateBooks={this.updateBooks} state={this.state} />)} />
+        <Footer />
       </div>
     )
   }

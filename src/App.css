@@ -6,10 +6,14 @@ body {
 }
 body, .app {
   background: #A9BCD0;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* main page */
-
+.list-books {
+  padding-bottom: 200px;
+}
 .list-books-title {
   padding: 15px 0;
   margin-bottom: 30px;
@@ -110,7 +114,7 @@ body, .app {
 }
 
 .search-books-results {
-  padding: 80px 10px 20px;
+  padding: 80px 10px 240px;
 }
 
 /* books grid */
@@ -210,4 +214,26 @@ body, .app {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 55px;
+  text-align: center;
+  color: #999;
+  background-color: #1b1b1e;
+}
+footer p {
+  margin: 0 0 10px;
+}
+@media only screen and (min-width: 600px) {
+  footer {
+    font-size: 1.1em;
+  }
+  footer p {
+    margin: 0 0 5px;
+  }
 }
